@@ -1,18 +1,19 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+ <v-container grid-list-xl>
+   <v-layout justify-center>
+     <v-flex xs12>
+       <v-btn color="blue" dark depressed @click="loginWithGoogle">Login dengan Akun Google</v-btn>
+     </v-flex>
+   </v-layout>
+ </v-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import { mapActions } from 'vuex'
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+  methods: {
+    ...mapActions("auth", ["loginWithGoogle"])
   }
 }
 </script>
